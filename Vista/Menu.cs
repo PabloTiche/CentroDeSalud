@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CentroDeSalud
+namespace CentroDeSalud.Vista
 {
     internal class Menu
     {
