@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Modelo
 {
-    public enum DocumentoTipo
+    internal class Persona
     {
-        DocumentoNacionalDeIdentidad = 1,
-        LibretaCivica = 2,
-        LibretaDeEnrolamiento = 3
     }
 }
