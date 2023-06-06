@@ -10,19 +10,11 @@ namespace CentroDeSalud.Controlador
 {
     public class ManejoPersona
     {
-        public void MostrarProvincias()
-        {
-            Provincias[] Provincias = Enum.GetValues<Provincias>();
-
-            foreach (Provincias provincia in Provincias)
-            {
-                Console.WriteLine($"{(int)provincia}. {provincia}");
-            }
-        }
 
         public List<Persona> ObtenerDatosPersonaDB() 
         {
             List<Persona> personas = null;
+
             string baseDatos = "DB/DB.json";
 
             try
@@ -38,5 +30,7 @@ namespace CentroDeSalud.Controlador
 
             return personas;
         }
+
+
     }
 }
