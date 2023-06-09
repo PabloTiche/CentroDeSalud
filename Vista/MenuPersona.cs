@@ -8,5 +8,12 @@ namespace CentroDeSalud.Vista
 {
     internal class MenuPersona
     {
+        Menu menuPrincipal = new Menu();
+
+        public void RegistrarPersona()
+        {
+            Console.Clear();
+            Console.WriteLine($"--------------------------------\n| MENU REGISTRO PERSONA |\n--------------------------------\n");
+        }
     }
 }
