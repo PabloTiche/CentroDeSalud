@@ -14,6 +14,7 @@ namespace CentroDeSalud.Vista
         {
             Console.Clear();
             Console.WriteLine($"--------------------------------\n| MENU REGISTRO PERSONA |\n--------------------------------\n");
-        }
+            Console.WriteLine("0. Regresar al Volver", "1. Registrar Persona");
+        }   
     }
 }
