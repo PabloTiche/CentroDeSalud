@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CentroDeSalud\\CentroDeSalud.csproj": {}
+    "D:\\CentroDeSalud\\CentroDeSalud\\CentroDeSalud.csproj": {}
   },
   "projects": {
-    "E:\\CentroDeSalud\\CentroDeSalud.csproj": {
+    "D:\\CentroDeSalud\\CentroDeSalud\\CentroDeSalud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CentroDeSalud\\CentroDeSalud.csproj",
+        "projectUniqueName": "D:\\CentroDeSalud\\CentroDeSalud\\CentroDeSalud.csproj",
         "projectName": "CentroDeSalud",
-        "projectPath": "E:\\CentroDeSalud\\CentroDeSalud.csproj",
-        "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-        "outputPath": "E:\\CentroDeSalud\\obj\\",
+        "projectPath": "D:\\CentroDeSalud\\CentroDeSalud\\CentroDeSalud.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "D:\\CentroDeSalud\\CentroDeSalud\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

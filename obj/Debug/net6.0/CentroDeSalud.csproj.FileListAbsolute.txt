@@ -1,0 +1,15 @@
+D:\CentroDeSalud\CentroDeSalud\bin\Debug\net6.0\CentroDeSalud.exe
+D:\CentroDeSalud\CentroDeSalud\bin\Debug\net6.0\CentroDeSalud.deps.json
+D:\CentroDeSalud\CentroDeSalud\bin\Debug\net6.0\CentroDeSalud.runtimeconfig.json
+D:\CentroDeSalud\CentroDeSalud\bin\Debug\net6.0\CentroDeSalud.dll
+D:\CentroDeSalud\CentroDeSalud\bin\Debug\net6.0\CentroDeSalud.pdb
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.csproj.AssemblyReference.cache
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.GeneratedMSBuildEditorConfig.editorconfig
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.AssemblyInfoInputs.cache
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.AssemblyInfo.cs
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.csproj.CoreCompileInputs.cache
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.dll
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\refint\CentroDeSalud.dll
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.pdb
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\CentroDeSalud.genruntimeconfig.cache
+D:\CentroDeSalud\CentroDeSalud\obj\Debug\net6.0\ref\CentroDeSalud.dll

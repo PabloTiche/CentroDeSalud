@@ -10,11 +10,17 @@ namespace CentroDeSalud.Vista
     {
         Menu menuPrincipal = new Menu();
 
+        public void MenuPrincipalPersona()
+        {
+            Console.WriteLine($"--------------------------------\n| MENU PERSONA |\n--------------------------------\n");
+            Console.WriteLine("\n 0. Volver \n 1. Mostrar \n 2. Buscar \n 3. Cargar \n 4. Modificar");
+        }
+
         public void RegistrarPersona()
         {
             Console.Clear();
             Console.WriteLine($"--------------------------------\n| MENU REGISTRO PERSONA |\n--------------------------------\n");
-            Console.WriteLine("0. Regresar al Volver", "1. Registrar Persona");
+            Console.WriteLine("0. Volver", "1. Registrar Persona");
         }   
     }
 }

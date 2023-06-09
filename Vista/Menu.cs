@@ -7,24 +7,25 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Vista
 {
-    internal class Menu
+    public class Menu
     {
-        public MenuPersona menuPersona = new MenuPersona();
-        public MenuVacuna menuVacuna = new MenuVacuna();
-        public ManejoMenu manejoMenu = new ManejoMenu();
+        
         public void Welcome()
         {
             Console.WriteLine($"--------------------------------\n| Software Centro De Salud |\n--------------------------------\n");
-            Console.WriteLine("Presione una tecla para continuar: "); Console.ReadKey(); Console.Clear();
+            Console.WriteLine("Presione una tecla para continuar: "); Console.ReadKey(); Console.Clear(); this.MenuPrincipal();
         }
 
         public void MenuPrincipal()
         {
+            ManejoMenu manejoMenu = new ManejoMenu();
+            MenuPersona menuPersona = new MenuPersona();
+
             bool salir = false;
             while (!salir)
             {
                 Console.Clear();
-                Console.WriteLine("-- MENU PRINCIPAL --\n", "0. Salir", "1. Personas", "2. Vacunacion", "3. Formularios");
+                Console.WriteLine("-- MENU PRINCIPAL --\n\n 0. Salir \n 1. Personas\n 2. Vacunacion \n 3. Formularios");
 
                 int opcion = manejoMenu.LeerOpcionValida(new List<int>() { 0, 1, 2, 3 });
 
@@ -37,7 +38,7 @@ namespace CentroDeSalud.Vista
                         }
                     case 1:
                         {
-                            salir = true;
+                            menuPersona.MenuPrincipalPersona();
                             break;
                         }
                     case 2:
