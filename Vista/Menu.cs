@@ -28,7 +28,7 @@ namespace CentroDeSalud.Vista
             Console.Clear();
             Console.WriteLine("-- MENU PRINCIPAL --\n\n 0. Salir \n 1. Personas\n 2. Vacunacion \n 3. Formularios \n 4. Turnos");
 
-            int opcion = manejoMenu.LeerOpcionValida(new List<int>() { 0, 1, 2, 3 });
+            int opcion = manejoMenu.LeerOpcionValida(new List<int>() { 0, 1, 2, 3, 4});
 
             switch(opcion)
             {
