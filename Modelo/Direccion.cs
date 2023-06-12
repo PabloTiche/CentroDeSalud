@@ -27,5 +27,14 @@ namespace CentroDeSalud.Modelo
             this.CodigoPostal = codigoPostal;
         }
 
+        public string DatosCompletosDireccion()
+        {
+            return $"Provincia: {this.Provincias}.\n" +
+                   $"Ciudad: {this.Ciudad}.\n" +
+                   $"Calle: {this.NobreCalle}.\n" +
+                   $"Numero: {this.Altura}.\n" +
+                   $"Codigo Postal: {this.CodigoPostal}.\n";
+        }
+
     }
 }

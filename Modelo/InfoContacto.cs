@@ -21,6 +21,11 @@ namespace CentroDeSalud.Modelo
             this.Email = email;
         }
 
-
+        public string DatosCompletosInfoContacto()
+        {
+            return $"Email: {this.Email}.\n" +
+                   $"Telefono Personal: {this.TelPersonal}.\n" +
+                   $"Telefono Emergencia: {this.TelEmergencia}.\n";
+        }
     }
 }

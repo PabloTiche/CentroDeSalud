@@ -8,7 +8,7 @@ namespace CentroDeSalud.Modelo
 {
     public class Persona
     {
-        public int numeroDNI {  get; set; }
+        public int NumeroDNI {  get; set; }
 
         public string NombreCompleto { get; set; }
 
@@ -22,7 +22,7 @@ namespace CentroDeSalud.Modelo
 
         public Persona(int dni, string nombreCompleto, string nacionalidad, DateTime fechaNacimiento, InfoContacto infoContacto, Direccion direccion)
         {
-            this.numeroDNI = dni;
+            this.NumeroDNI = dni;
             this.NombreCompleto = nombreCompleto;
             this.Nacionalidad = nacionalidad; 
             this.FechaNacimiento = fechaNacimiento;
@@ -30,7 +30,14 @@ namespace CentroDeSalud.Modelo
             this.Direccion = direccion;
         }
 
-
-
+        public string DatosCompletosPersona()
+        {
+            return $"Nombre Completo: {this.NombreCompleto}.\n" +
+                   $"Fecha De Nacimiento: {this.FechaNacimiento:dd/MM/yyyy}.\n" +
+                   $"Nacionalidad: {this.Nacionalidad}.\n" +
+                   $"Numero De Documento: {this.NumeroDNI}.\n" +
+                   $"{InfoContacto.DatosCompletosInfoContacto()}" +
+                   $"{Direccion.DatosCompletosDireccion()}";
+        }
     }
 }

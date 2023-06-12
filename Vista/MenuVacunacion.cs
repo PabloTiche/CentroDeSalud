@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Vista
 {
-    internal class MenuVacuna
+    internal class MenuVacunacion
     {
         ManejoMenu manejoMenu = new(); Menu menu = new();
-        public void MenuPrincipalVacuna()
+        public void MenuPrincipalVacunacion()
         {
-            Console.Clear(); Console.WriteLine("-- MENU VACUNACION --\n");
-            Console.WriteLine("0. Volver \n 1. Buscar Vacuna \n 2. Crear Vacuna \n 3. Mostrar Vacunas");
+
+            Console.Clear();
+            Console.WriteLine("-- MENU PRINCIPAL VACUNACION --\n\n 0. Volver \n 1. Buscar Vacunacion\n 2. Crear Vacunacion \n 3. Mostrar Vacunaciones");
 
             int opcion = manejoMenu.LeerOpcionValida(new List<int>() { 0, 1, 2, 3 });
 
@@ -26,38 +27,37 @@ namespace CentroDeSalud.Vista
                     }
                 case 1:
                     {
-                        this.MenuBuscarVacuna();
+                        this.MenuBuscarVacunacion();
                         break;
                     }
                 case 2:
                     {
-                        this.MenuCrearVacuna();
+                        this.MenuCrearVacunacion();
                         break;
                     }
                 case 3:
                     {
-                        this.MenuMostrarVacunas();
+                        this.MenuMostrarVacunacion();
                         break;
                     }
             }
         }
 
-        public void MenuCrearVacuna()
+        public void MenuCrearVacunacion()
         {
 
         }
 
-        public void MenuBuscarVacuna()
+        public void MenuBuscarVacunacion()
         {
 
         }
 
-        public void MenuMostrarVacunas()
+        public void MenuMostrarVacunacion()
         {
 
         }
-
-        public void MenuEditarVacuna()
+        public void MenuEditarVacunacion()
         {
 
         }
