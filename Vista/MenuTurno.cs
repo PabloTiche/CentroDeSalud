@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Vista
 {
-    internal class MenuFormulario
+    internal class MenuTurno
     {
-        public void MenuPrincipalFormulario()
+        public void MenuPrincipalTurno()
         {
 
         }
 
-        public void MenuCrearFormulario()
+        public void MenuCrearTurno()
         {
 
         }
 
-        public void MenuBuscarFormulario()
+        public void MenuBuscarTurno()
         {
 
         }
 
-        public void MenuEditarFormulario()
+        public void MenuEditarTurno()
         {
 
         }

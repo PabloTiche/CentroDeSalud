@@ -13,5 +13,20 @@ namespace CentroDeSalud.Vista
             Console.Clear(); Console.WriteLine("-- MENU VACUNACION --\n");
             Console.WriteLine("0. Volver \n 1. Buscar Vacuna \n 2. Crear Vacuna \n 3. Agregar Vacunacion ");
         }
+
+        public void MenuCrearVacuna()
+        {
+
+        }
+
+        public void MenuBuscarVacuna()
+        {
+
+        }
+
+        public void MenuEditarVacuna()
+        {
+
+        }
     }
 }

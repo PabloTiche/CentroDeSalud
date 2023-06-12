@@ -10,7 +10,8 @@ namespace CentroDeSalud.Vista
     public class Menu
     {
         
-        public void Welcome()
+
+        public void MenuWelcome()
         {
             Console.WriteLine($"--------------------------------\n| Software Centro De Salud |\n--------------------------------\n");
             Console.WriteLine("Presione una tecla para continuar: "); Console.ReadKey(); Console.Clear(); this.MenuPrincipal();
@@ -18,18 +19,21 @@ namespace CentroDeSalud.Vista
 
         public void MenuPrincipal()
         {
-            ManejoMenu manejoMenu = new ManejoMenu();
-            MenuPersona menuPersona = new MenuPersona();
+            ManejoMenu manejoMenu = new();
+            MenuPersona menuPersona = new();
+            MenuVacuna menuVacuna = new();
+            MenuFormulario menuFormulario = new();
+            MenuTurno menuTurno = new();
 
             bool salir = false;
             while (!salir)
             {
                 Console.Clear();
-                Console.WriteLine("-- MENU PRINCIPAL --\n\n 0. Salir \n 1. Personas\n 2. Vacunacion \n 3. Formularios");
+                Console.WriteLine("-- MENU PRINCIPAL --\n\n 0. Salir \n 1. Personas\n 2. Vacunacion \n 3. Formularios \n 4. Turnos");
 
                 int opcion = manejoMenu.LeerOpcionValida(new List<int>() { 0, 1, 2, 3 });
 
-                switch ( opcion )
+                switch(opcion)
                 {
                     case 0:
                         {
@@ -43,17 +47,17 @@ namespace CentroDeSalud.Vista
                         }
                     case 2:
                         {
-                            salir = true;
+                            menuVacuna.MenuPrincipalVacuna();
                             break;
                         }
                     case 3:
                         {
-                            salir = false;
+                            menuFormulario.MenuPrincipalFormulario();
                             break;
                         }
                     case 4:
                         {
-                            salir = false;
+                            menuTurno.MenuPrincipalTurno();
                             break;
                         }
                 }

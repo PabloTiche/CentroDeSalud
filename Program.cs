@@ -5,10 +5,10 @@ namespace CentroDeSalud
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Menu menu = new Menu();
-            menu.Welcome();
+            Menu menu = new();
+            menu.MenuWelcome();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace CentroDeSalud.Vista
 {
     internal class MenuPersona
     {
-        Menu menuPrincipal = new Menu();
+        Menu menuPrincipal = new();
 
         public void MenuPrincipalPersona()
         {
@@ -16,11 +16,21 @@ namespace CentroDeSalud.Vista
             Console.WriteLine("\n 0. Volver \n 1. Mostrar \n 2. Buscar \n 3. Cargar \n 4. Modificar");
         }
 
-        public void RegistrarPersona()
+        public void MenuRegistrarPersona()
         {
             Console.Clear();
             Console.WriteLine($"--------------------------------\n| MENU REGISTRO PERSONA |\n--------------------------------\n");
             Console.WriteLine("0. Volver", "1. Registrar Persona");
-        }   
+        }  
+        
+        public void MenuBuscarPersona()
+        {
+
+        } 
+
+        public void MenuEditarPersona()
+        {
+
+        }
     }
 }
