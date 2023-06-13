@@ -40,7 +40,7 @@ namespace CentroDeSalud.Controlador
             }
         }
 
-        private string IngresoString(string mensaje)
+        public string IngresoString(string mensaje)
         {
             bool salir = false;
             string stringCompletoIngresado = "";

@@ -33,6 +33,11 @@ namespace CentroDeSalud.Controlador
             public PersonaConCuraParaLaInmortalidadException() : base("Biologicamente es imposible que persona ingresada siga viva. ") { }
         }
 
+        public class ProvinciaEquivocadaException : Exception
+        {
+            public ProvinciaEquivocadaException() : base("Ingrese un dato acorde a los mostrados anteriormente"){}
+        }
+
         public class PersonaEquivocadaException : Exception
         {
             public PersonaEquivocadaException() : base("Ingrese datos acorde a la persona seleccionada. ") { }
@@ -56,6 +61,11 @@ namespace CentroDeSalud.Controlador
         public class SegundaFechaMenor : Exception 
         {
             public SegundaFechaMenor() : base("Al momento de ingresar la segunda fecha, ésta no puede ser anterior a la primera. ") { }
+        }
+        public class CorreoNecesitaTodosLosDatosException : Exception
+        {
+            public CorreoNecesitaTodosLosDatosException() : base("El correo ingresado necesita tener todos los datos requeridos '@', '.'"){}
+            
         }
     }
 }
