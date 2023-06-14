@@ -16,16 +16,9 @@ namespace CentroDeSalud.Controlador
             int selecc = -1;
             try
             {
-                while (!opcionesValidas.Contains(selecc))
-                {
-                    selecc = int.Parse(Console.ReadKey(true).KeyChar.ToString());
-                }
+                while (!opcionesValidas.Contains(selecc)) selecc = int.Parse(Console.ReadKey(true).KeyChar.ToString());                                             
             }
-            catch (FormatException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
+            catch (FormatException ex){Console.WriteLine(ex.Message);}                 
 
             return selecc;
         }
@@ -34,53 +27,32 @@ namespace CentroDeSalud.Controlador
         {
             Provincias[] Provincias = Enum.GetValues<Provincias>();
 
-            foreach (Provincias Provincia in Provincias)
-            {
-                Console.WriteLine($"{(int)Provincia}. {Provincia}");
-            }
+            foreach (Provincias Provincia in Provincias) Console.WriteLine($"{(int)Provincia}. {Provincia}");
+                                  
         }
 
         public string IngresoString(string mensaje)
         {
-            bool salir = false;
-            string stringCompletoIngresado = "";
-            do
-            {
+            bool salir = false; string stringCompletoIngresado = "";
+            
+            do{
+            
                 try
                 {
                     Console.WriteLine($"\n{mensaje}");
                     stringCompletoIngresado = Console.ReadLine();
 
-                    if (String.IsNullOrEmpty(stringCompletoIngresado))
-                    {
-                        throw new DatoVacioException();
-                    }
-                    else if (Regex.IsMatch(stringCompletoIngresado, @"^[0-9]+$"))
-                    {
-                        throw new SoloLetrasException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (String.IsNullOrEmpty(stringCompletoIngresado)) throw new DatoVacioException();                                         
+                    
+                    else if (Regex.IsMatch(stringCompletoIngresado, @"^[0-9]+$")) throw new SoloLetrasException();                                         
+                    
+                    else salir = true;                                                             
                 }
-                catch (DatoVacioException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (SoloLetrasException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (DatoVacioException ex){Console.WriteLine(ex.Message);}
+                catch (SoloLetrasException ex){Console.WriteLine(ex.Message);}
+                catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
             }
-            while (!salir);
-
-            return stringCompletoIngresado;
+            while (!salir); return stringCompletoIngresado;     
         }
     }
 }

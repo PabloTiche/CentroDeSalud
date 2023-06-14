@@ -136,19 +136,16 @@ namespace CentroDeSalud.Controlador
                 }
                 catch (DatoVacioException ex){Console.WriteLine(ex.Message);}  
                 catch (StringMuyLargoException ex){Console.WriteLine(ex.Message);}
-                catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
+                catch (Exception ex){Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}");}
             }
-            while (!salir); return nombreCalle;
-
-            
+            while (!salir); return nombreCalle;            
         }
 
         private int IngresoNumeroCasa()
         {
-            bool salir = false;
-            int numeroCasa = 69;
-            do
-            {
+            bool salir = false; int numeroCasa = 69;
+            
+            do{
                 try
                 {
                     Console.WriteLine("\nDesea ingresar el numero de casa.");
@@ -171,70 +168,37 @@ namespace CentroDeSalud.Controlador
                             }
                     }
 
-                    if (numeroCasa < 0 || numeroCasa > 20000)
-                    {
-                        throw new NumeroFueraDeRangoException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (numeroCasa < 0 || numeroCasa > 20000) throw new NumeroFueraDeRangoException();                 
+                    
+                    else salir = true;                                                      
 
                 }
-                catch (NumeroFueraDeRangoException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (ArgumentNullException)
-                {
-                    Console.WriteLine("No puede ingresar un dato vacio");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (NumeroFueraDeRangoException ex){Console.WriteLine(ex.Message);}                                                   
+                catch (ArgumentNullException){Console.WriteLine("No puede ingresar un dato vacio");}
+                catch (Exception ex){Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}");}
             }
-            while (!salir);
-
-            return numeroCasa;
+            while (!salir); return numeroCasa;           
         }
 
         private string IngresoCodigoPostal()
         {
-            bool salir = false;
-            string codigoPostal = "3263";
+            bool salir = false; string codigoPostal = "";
 
-            do
-            {
+            do{   
                 try
                 {
-                    Console.WriteLine("\nIngrese el codigo postal:");
-                    codigoPostal = Console.ReadLine();
+                    Console.WriteLine("\nIngrese el codigo postal:"); codigoPostal = Console.ReadLine();
+                    
 
-                    if (codigoPostal.Length > 7)
-                    {
-                        throw new NumeroFueraDeRangoException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (codigoPostal.Length > 7) throw new NumeroFueraDeRangoException();                          
+                    
+                    else salir = true;                                         
+                   
                 }
-                catch (NumeroFueraDeRangoException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (NumeroFueraDeRangoException ex){Console.WriteLine(ex.Message);}
+                catch (Exception ex){Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}");}
             }
-            while (!salir);
-
-            return codigoPostal;
-
+            while (!salir); return codigoPostal;
         }
 
         private InfoContacto RegistrarInfoContacto()
@@ -254,37 +218,22 @@ namespace CentroDeSalud.Controlador
 
         private string IngresoEmail()
         {
-            string correoElectronico = "x";
-            bool salir = false;
-            do
-            {
+            string correoElectronico = ""; bool salir = false;
+           
+            do{
                 try
                 {
-                    Console.WriteLine("\nIngrese el correo electronico de la persona:");
-                    correoElectronico = Console.ReadLine();
+                    Console.WriteLine("\nIngrese el correo electronico de la persona:"); correoElectronico = Console.ReadLine();                
 
-                    if (this.EmailSinErrores(correoElectronico) == false)
-                    {
-                        throw new CorreoNecesitaTodosLosDatosException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (this.EmailSinErrores(correoElectronico) == false) throw new CorreoNecesitaTodosLosDatosException(); 
+
+                    else salir = true;                         
+                   
                 }
-                catch (CorreoNecesitaTodosLosDatosException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (CorreoNecesitaTodosLosDatosException ex){Console.WriteLine(ex.Message);}
+                catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
             }
-            while (!salir);
-
-            return correoElectronico;
+            while (!salir); return correoElectronico;   
         }
 
         private bool EmailSinErrores(string email)
@@ -310,78 +259,48 @@ namespace CentroDeSalud.Controlador
 
         private string IngresoNumeroTelefono(string mensaje)
         {
-            bool salir = false;
-            string numeroTelefono = "0";
-
-            do
-            {
+            bool salir = false; string numeroTelefono = "";
+            
+            do{
                 try
                 {
-                    Console.WriteLine(mensaje);
-                    numeroTelefono = Console.ReadLine();
-
-                    if (numeroTelefono.Length < 6 || numeroTelefono.Length > 14)
-                    {
-                        throw new NumeroFueraDeRangoException();
-                    }
-                    else if (Regex.IsMatch(numeroTelefono, @"^[a-zA-Z]+$"))
-                    {
-                        throw new NumeroDeTelefonoConLetrasException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    Console.WriteLine(mensaje); numeroTelefono = Console.ReadLine();
+                   
+                    if (numeroTelefono.Length < 6 || numeroTelefono.Length > 14) throw new NumeroFueraDeRangoException();         
+                    
+                    else if (Regex.IsMatch(numeroTelefono, @"^[a-zA-Z]+$")) throw new NumeroDeTelefonoConLetrasException();     
+                    
+                    else salir = true;
+                                                              
                 }
-                catch (NumeroFueraDeRangoException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (NumeroDeTelefonoConLetrasException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (NumeroFueraDeRangoException ex){Console.WriteLine(ex.Message);}                                                 
+                catch (NumeroDeTelefonoConLetrasException ex){Console.WriteLine(ex.Message);}
+                catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
             }
-            while (!salir);
-
-            return numeroTelefono;
+            while (!salir); return numeroTelefono;        
         }
 
         public bool BusquedaPorDNI(int ingresoDNI)
         {
             List<Persona> Personas = this.ObtenerDatosPersonaBD();
 
-            bool validacion = false;
-            bool afirmativo = false;
-
+            bool validacion; bool afirmativo = false;
+           
             foreach (Persona persona in Personas)
             {
-                if (ingresoDNI == persona.NumeroDNI)
-                {
-                    validacion = true;
-                }
-                else
-                {
-                    validacion = false;
-                }
+                if (ingresoDNI == persona.NumeroDNI) validacion = true;
+              
+                else validacion = false;                                                
 
-                if (validacion == true)
-                {
-                    afirmativo = validacion;
-                }
+                if (validacion == true) afirmativo = validacion;
+                                          
             }
-
             return afirmativo;
         }
 
         private void MostrarPersonaPorDNI(int dni)
         {
-            Menu menu = new Menu();
+            Menu menu = new();
             Console.Clear();
             Console.WriteLine("Persona en base de datos con ese mismo numero de documento:");
 
@@ -391,7 +310,7 @@ namespace CentroDeSalud.Controlador
 
             Console.ReadKey(); Console.Clear();
             menu.MenuPrincipal();
-
+            
         }
 
         public Persona ObtenerPersonaPorDNI(int dni)
@@ -400,15 +319,9 @@ namespace CentroDeSalud.Controlador
 
             try
             {
-                List<Persona> personasEnBD = this.ObtenerDatosPersonaBD();
-
-                persona = personasEnBD.First(x => x.NumeroDNI == dni);
+                List<Persona> personasEnBD = this.ObtenerDatosPersonaBD(); persona = personasEnBD.First(x => x.NumeroDNI == dni);        
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ocurrio un error inesperado");
-                Console.WriteLine($"Detalle: {ex.Message}");
-            }
+            catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
 
             return persona;
         }
@@ -420,25 +333,13 @@ namespace CentroDeSalud.Controlador
 
             try
             {
-                if (File.Exists(baseDeDatos))
-                {
-                    personas = JsonSerializer.Deserialize<List<Persona>>(File.ReadAllText(baseDeDatos));
-                }
-                else
-                {
-                    personas = new List<Persona>();
-                }
+                if (File.Exists(baseDeDatos)) personas = JsonSerializer.Deserialize<List<Persona>>(File.ReadAllText(baseDeDatos));
+                         
+                else personas = new List<Persona>();
+                      
             }
-            catch (JsonException)
-            {
-                Console.WriteLine("\nNo hay ninguna persona en la base de datos");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ocurrio un error inesperado");
-                Console.WriteLine($"Detalle: {ex.Message}");
-            }
-
+            catch (JsonException){Console.WriteLine("\nNo hay ninguna persona en la base de datos");}
+            catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
 
             return personas;
         }
