@@ -18,16 +18,12 @@ namespace CentroDeSalud.Controlador
 
         public List<Persona> ObtenerDatosPersonaDB() 
         {
-            List<Persona> personas = null;
-
-            string baseDatos = "DB/DB.json";
+            List<Persona> personas = null; string baseDatos = "DB/DBPersona.json";
 
             try
             {
                 if (File.Exists(baseDatos)) personas = JsonSerializer.Deserialize<List<Persona>>(File.ReadAllText(baseDatos));
-
-                else personas = new List<Persona>();
-
+                else personas = new List<Persona>(); 
             }
             catch (JsonException) { Console.WriteLine("\nNo existe nunguna persona en la Base de Datos");}
             catch (Exception ex) { Console.WriteLine($"Ocurrio un error inesperado.\nDetalle: {ex.Message}");}
@@ -37,44 +33,24 @@ namespace CentroDeSalud.Controlador
 
         private int IngresoDNI()
         {
-            bool salir = false;
-            int numeroDNI = 0;
-            do
-            {
+            bool salir = false; int numeroDNI = 0;    
+            do{
                 try
                 {
                     Console.WriteLine("Ingrese el numero de documento de la persona (sin puntos)");
                     numeroDNI = int.Parse(Console.ReadLine());
 
-                    if (!(numeroDNI >= 12000000 || numeroDNI <= 70000000))
-                    {
-                        throw new NumeroFueraDeRangoException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (!(numeroDNI >= 1000000 || numeroDNI <= 90000000)) throw new NumeroFueraDeRangoException();
+                    else salir = true;
+
                 }
-                catch (NumeroFueraDeRangoException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (ArgumentNullException)
-                {
-                    Console.WriteLine("Tiene que ingresar un dato");
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Tiene que ingresar solo numeros");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (NumeroFueraDeRangoException ex) {Console.WriteLine(ex.Message);}
+                catch (ArgumentNullException){Console.WriteLine("Tiene que ingresar un dato");}  
+                catch (FormatException){Console.WriteLine("Tiene que ingresar solo numeros");}
+                catch (Exception ex){Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}");}
+                
             }
             while (!salir);
-
             return numeroDNI;
         }
 
@@ -94,41 +70,24 @@ namespace CentroDeSalud.Controlador
                     else salir = true;
 
                 }
-                catch (FechaExcedidaException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (PersonaConCuraParaLaInmortalidadException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (ArgumentNullException)
-                {
-                    Console.WriteLine("No puede ingresar un dato vacio");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (FechaExcedidaException ex){Console.WriteLine(ex.Message);}
+                catch (PersonaConCuraParaLaInmortalidadException ex){Console.WriteLine(ex.Message);}
+                catch (ArgumentNullException){Console.WriteLine("No puede ingresar un dato vacio");}
+                catch (Exception ex){Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}");}
             }
             while (!salir); return fechaDeNacimiento;
         }
 
         private Direccion RegistrarDireccion()
         {
-            string ciudad, calle, codigoPostal;
-            int altura;
-
+            string ciudad, calle, codigoPostal; int altura;
             Provincias provinciaEnum = (Provincias)this.IngresoDeProvincia();
 
             ciudad = manejoMenu.IngresoString("Ingrese el nombre de la ciudad en la que reside la persona");
 
             Console.WriteLine("\nIngrese la calle y numero de la residencia de la persona.\n");
 
-            calle = this.IngresoNombreCalle();
-
-            altura = this.IngresoNumeroCasa();
+            calle = this.IngresoNombreCalle(); altura = this.IngresoNumeroCasa();
 
             codigoPostal = this.IngresoCodigoPostal();
 
@@ -137,90 +96,51 @@ namespace CentroDeSalud.Controlador
 
         private int IngresoDeProvincia()
         {
-            bool salir = false;
-            int provincia = 1;
+            bool salir = false; int provincia = 1;
+            
             do
             {
                 try
                 {
-                    Console.WriteLine("\nSeleccione la provincia en la que reside la persona: ");
-                    manejoMenu.MostrarProvincias();
+                    Console.WriteLine("\nSeleccione la provincia en la que reside la persona: "); manejoMenu.MostrarProvincias();
                     provincia = int.Parse(Console.ReadLine());
 
-                    if (provincia < 1 || provincia > 23)
-                    {
-                        throw new ProvinciaEquivocadaException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (provincia < 1 || provincia > 23) throw new ProvinciaEquivocadaException();
+                    else salir = true;
+  
                 }
-                catch (ProvinciaEquivocadaException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (ArgumentNullException)
-                {
-                    Console.WriteLine("No se puede ingresar un dato vacio");
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Ingrese un numero");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (ProvinciaEquivocadaException ex){Console.WriteLine(ex.Message);}  
+                catch (ArgumentNullException){Console.WriteLine("No se puede ingresar un dato vacio");}   
+                catch (FormatException){Console.WriteLine("Ingrese un numero");}
+                catch (Exception ex){Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}");}
             }
-            while (!salir);
-
-            return provincia;
+            while (!salir); return provincia;     
         }
 
         private string IngresoNombreCalle()
         {
-            bool salir = false;
-            string nombreCalle = "María Antonia de la Paz y Figueroa";
+            bool salir = false; string nombreCalle = "";
 
-            do
-            {
+            do{
                 try
                 {
                     Console.WriteLine("\nIngrese el nombre de la calle en la que vive la persona");
                     nombreCalle = Console.ReadLine();
 
-                    if (String.IsNullOrEmpty(nombreCalle))
-                    {
-                        throw new DatoVacioException();
-                    }
-                    else if (nombreCalle.Length > 35)
-                    {
-                        throw new StringMuyLargoException();
-                    }
-                    else
-                    {
-                        salir = true;
-                    }
+                    if (String.IsNullOrEmpty(nombreCalle)) throw new DatoVacioException();
+                    
+                    else if (nombreCalle.Length > 35) throw new StringMuyLargoException();
+                    
+                    else salir = true;
+                         
                 }
-                catch (DatoVacioException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (StringMuyLargoException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocurrio un error inesperado");
-                    Console.WriteLine($"Detalle: {ex.Message}");
-                }
+                catch (DatoVacioException ex){Console.WriteLine(ex.Message);}  
+                catch (StringMuyLargoException ex){Console.WriteLine(ex.Message);}
+                catch (Exception ex) { Console.WriteLine("Ocurrio un error inesperado" + $"DETALLE: {ex.Message}"); }
             }
-            while (!salir);
+            while (!salir); return nombreCalle;
 
-            return nombreCalle;
+            
         }
 
         private int IngresoNumeroCasa()
