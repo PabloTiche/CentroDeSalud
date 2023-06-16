@@ -148,26 +148,9 @@ namespace CentroDeSalud.Controlador
             do{
                 try
                 {
-                    Console.WriteLine("\nDesea ingresar el numero de casa.");
-
-                    Console.WriteLine("\n1 = SI");
-                    Console.WriteLine("\n2 = S/N");
-                    int opcion = manejoMenu.LeerOpcionValida(new List<int>() { 1, 2 });
-
-                    switch (opcion)
-                    {
-                        case 1:
-                            {
-                                numeroCasa = int.Parse(Console.ReadLine());
-                                break;
-                            }
-                        case 2:
-                            {
-                                numeroCasa = 0000000001;
-                                break;
-                            }
-                    }
-
+                
+                    numeroCasa = int.Parse(Console.ReadLine());
+                                                                     
                     if (numeroCasa < 0 || numeroCasa > 20000) throw new NumeroFueraDeRangoException();                 
                     
                     else salir = true;                                                      
