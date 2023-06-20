@@ -86,3 +86,14 @@ obj/Debug/net6.0/CentroDeSalud.GeneratedMSBuildEditorConfig.editorconfig
 obj/CentroDeSalud.csproj.nuget.dgspec.json
 obj/CentroDeSalud.csproj.nuget.g.props
 obj/Debug/net6.0/CentroDeSalud.assets.cache
+*.vsidx
+*.v2
+.vs/CentroDeSalud/DesignTimeBuild/.dtbcache.v2
+*.v2
+*.vsidx
+*.vsidx
+.vs/CentroDeSalud/v17/.suo
+.vs/CentroDeSalud/FileContentIndex/8bcd5fac-05eb-4cb8-9042-adc387cab270.vsidx
+.vs/CentroDeSalud/FileContentIndex/f83a5e9c-06b3-4b98-ba5c-7c4b42cd1ba0.vsidx
+.vs/CentroDeSalud/v17/.futdcache.v2
+.vs/ProjectEvaluation/centrodesalud.metadata.v7.bin
