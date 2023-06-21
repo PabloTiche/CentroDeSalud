@@ -12,9 +12,9 @@ namespace CentroDeSalud.Modelo
 
         public TimeOnly HoraTurno { get; set; }
 
-        public Persona Paciente { get; set; }  
+        public Persona Paciente { get; set; }
 
-        public string MutualPaciente { get; set; }
+        public string? MutualPaciente { get; set; }
 
         public Persona PersonalMedico { get; set; }
 
