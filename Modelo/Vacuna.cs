@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Modelo
 {
-    internal class Vacuna
+    public class Vacuna
     {
+
     }
 }
