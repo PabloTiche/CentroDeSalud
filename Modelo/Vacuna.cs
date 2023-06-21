@@ -15,6 +15,14 @@ namespace CentroDeSalud.Modelo
         public string NumeroLote { get; set; }
 
         public DateOnly FechaVencimiento { get; set; } // public void InTheYear(){Assert.Equal(new DateOnly(2009, 1, 1), InDate.TheYear(2009));}
+
+        public Vacuna(List<Enfermedad> enfermedades, string estrategia, string numeroLote, DateOnly fechaVencimiento) 
+        {
+            this.Enfermedades = enfermedades;
+            this.Estrategia = estrategia;
+            this.NumeroLote = numeroLote;
+            this.FechaVencimiento = fechaVencimiento;
+        }
     
     }
 }

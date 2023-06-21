@@ -10,8 +10,15 @@ namespace CentroDeSalud.Modelo
     {
         public string Caracteristicas { get;set; }
 
-        public List<String> Sintomas { get;set; }
+        public List<string> Sintomas { get;set; }
 
         public Vacuna Vacuna { get;set; }
+
+        public Enfermedad(string caracteristicas, List<string> sintomas, Vacuna vacuna)
+        {
+            this.Caracteristicas = caracteristicas;
+            this.Sintomas = sintomas;
+            this.Vacuna = vacuna;
+        }
     }
 }

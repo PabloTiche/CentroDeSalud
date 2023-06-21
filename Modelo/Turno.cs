@@ -20,6 +20,16 @@ namespace CentroDeSalud.Modelo
 
         public string? DetallesDeConsulta { get; set; }
 
+        public Turno(DateTime fechaTurno, TimeOnly horaTurno, Persona paciente, string mutualPaciente, Persona personalMedico, string detalleConsulta)
+        {
+            this.FechaTurno = fechaTurno;
+            this.HoraTurno = horaTurno;
+            this.Paciente = paciente;
+            this.MutualPaciente= mutualPaciente;
+            this.PersonalMedico = personalMedico;
+            this.DetallesDeConsulta = detalleConsulta;
+        }
+
 
     }
 }
