@@ -10,7 +10,7 @@ namespace CentroDeSalud.Modelo
     {
         public DateTime FechaTurno { get; set; }
 
-        public TimeOnly HoraTurno { get; set; }
+        public TimeOnly HoraTurno { get; set; } // year, month, da
 
         public Persona Paciente { get; set; }
 
