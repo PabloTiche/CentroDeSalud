@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Modelo
 {
-    internal class Formulario
+    public class Formulario
     {
         public DateTime Fecha { get;set;}
 

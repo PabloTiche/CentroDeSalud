@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Modelo
 {
-    internal class Vacunacion
+    public class Vacunacion
     {
         public Persona Persona { get; set; }
 

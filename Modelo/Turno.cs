@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentroDeSalud.Modelo
 {
-    internal class Turno
+    public class Turno
     {
         public DateTime FechaTurno { get; set; }
 
